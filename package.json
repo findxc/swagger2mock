@@ -1,0 +1,36 @@
+{
+  "name": "@findtools/swagger2mock",
+  "version": "0.0.1",
+  "description": "parse swagger.json to generate mock files",
+  "bin": {
+    "swagger2mock": "bin/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/findxc/swagger2mock.git"
+  },
+  "keywords": [
+    "swagger",
+    "generate",
+    "mock"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/findxc/swagger2mock/issues"
+  },
+  "homepage": "https://github.com/findxc/swagger2mock#readme",
+  "devDependencies": {
+    "release-it": "^15.0.0"
+  },
+  "dependencies": {
+    "args": "^5.0.3",
+    "axios": "^0.27.2",
+    "prettier": "2.6.2"
+  }
+}
