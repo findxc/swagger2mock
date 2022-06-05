@@ -7,6 +7,7 @@ const generateFiles = require('./generateFiles')
 
 args
   .option('url', 'The swagger.json url', '')
+  .option('path', 'The local swagger.json path relative to root', '')
   .option('directory', 'The directory to put generated mock files', 'mock')
   .option('arrayLength', 'The mocked array length', 10)
   .option('filenameSuffix', 'The suffix of filename', '.generated.js')

@@ -6,7 +6,7 @@ Now it only translates GET requests. You can use [@findtools/mock-server](https:
 
 Use `npx @findtools/swagger2mock -h` to see all options.
 
-Use `npx @findtools/swagger2mock --url https://petstore.swagger.io/v2/swagger.json` to see an example. It will generate mock files. And check https://petstore.swagger.io/ to see the swagger ui.
+Use `npx @findtools/swagger2mock --url https://petstore.swagger.io/v2/swagger.json` to see an example. For local swagger.json file, use `npx @findtools/swagger2mock --path root-relative-path/swagger.json` instead. It will generate mock files. And check https://petstore.swagger.io/ to see the swagger ui.
 
 The generated mock files are formated by prettier. If you want to custom prettier options, add a key `swagger2mock` in your `package.json` , following is an example. Besides, other options can be configured in `package.json` too.
 
