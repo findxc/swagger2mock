@@ -12,9 +12,10 @@ function groupByTag(options, swagger) {
       .forEach(method => {
         const { summary, tags, responses } = methods[method]
         const successCode = Object.keys(responses).find(code => /^2/.test(code))
-        const mock = successCode
-          ? schema2mock(options, swagger, responses[successCode].schema)
-          : {}
+        const mock =
+          successCode && responses[successCode].schema
+            ? schema2mock(options, swagger, responses[successCode].schema)
+            : {}
         tags.forEach(tag => {
           if (!map[tag]) {
             map[tag] = {}
