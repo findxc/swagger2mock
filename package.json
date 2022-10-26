@@ -1,6 +1,6 @@
 {
   "name": "@findtools/swagger2mock",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "parse swagger.json to generate mock files",
   "bin": {
     "swagger2mock": "bin/index.js"
