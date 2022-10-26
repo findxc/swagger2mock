@@ -2,11 +2,14 @@ const fs = require('fs')
 const path = require('path')
 const prettier = require('prettier')
 
+function safeMkdirSync(path) {
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, { recursive: true })
+  }
+}
+
 function generateFiles(options, group) {
   const mockFolder = path.resolve(process.cwd(), options.directory)
-  if (!fs.existsSync(mockFolder)) {
-    fs.mkdirSync(mockFolder, { recursive: true })
-  }
 
   for (const tag in group) {
     const tagPaths = group[tag]
@@ -38,6 +41,8 @@ function generateFiles(options, group) {
     `
 
     const filename = `${mockFolder}/${tag}${options.filenameSuffix}`
+    // make sure dir exist before write file
+    safeMkdirSync(path.dirname(filename))
     fs.writeFileSync(filename, prettier.format(fileContent, options.prettier))
     console.log(`generated ${filename}`)
   }
